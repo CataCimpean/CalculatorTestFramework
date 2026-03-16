@@ -6,13 +6,15 @@ namespace CalculatorTestFramework;
 partial class MainForm : Form
 {
     private readonly ITestConfigService _configService;
+    private readonly ITestRunner _testRunner;
     private List<TestSuiteConfig> _loadedSuites = new();
 
-    public MainForm() : this(new TestConfigService()) { }
+    public MainForm() : this(new TestConfigService(), new TestRunnerService()) { }
 
-    public MainForm(ITestConfigService configService)
+    public MainForm(ITestConfigService configService, ITestRunner testRunner)
     {
         _configService = configService;
+        _testRunner = testRunner;
         InitializeComponent();
     }
 
@@ -42,8 +44,7 @@ partial class MainForm : Form
         lblStatus.Text = "Running...";
         Application.DoEvents();
 
-        var runner = new TestRunner();
-        var results = runner.RunAll(_loadedSuites);
+        var results = _testRunner.RunAll(_loadedSuites);
 
         gridResults.DataSource = null;
         gridResults.Columns.Clear();

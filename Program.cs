@@ -9,6 +9,7 @@ static class Program
     {
         ApplicationConfiguration.Initialize();
         var configService = new TestConfigService();
-        Application.Run(new MainForm(configService));
+        var testRunner = new TestRunnerService();
+        Application.Run(new MainForm(configService, testRunner));
     }
 }

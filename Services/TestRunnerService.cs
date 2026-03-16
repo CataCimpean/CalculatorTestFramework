@@ -1,9 +1,9 @@
 using CalculatorTestFramework.Configs;
 using CalculatorTestFramework.Models;
 
-namespace CalculatorTestFramework;
+namespace CalculatorTestFramework.Services;
 
-public class TestRunner
+public class TestRunnerService : ITestRunner
 {
     public List<TestResult> RunAll(IEnumerable<TestSuiteConfig> suites)
     {
@@ -21,7 +21,7 @@ public class TestRunner
         return results;
     }
 
-    TestResult RunOne(Calculator calc, string suiteName, TestCaseConfig test)
+    static TestResult RunOne(Calculator calc, string suiteName, TestCaseConfig test)
     {
         var result = new TestResult
         {
