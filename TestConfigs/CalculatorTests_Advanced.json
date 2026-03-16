@@ -1,0 +1,12 @@
+{
+  "name": "Advanced",
+  "tests": [
+    { "name": "Power 2^10", "method": "Power", "arguments": [2, 10], "expectedResult": 1024 },
+    { "name": "Power 3^3", "method": "Power", "arguments": [3, 3], "expectedResult": 27 },
+    { "name": "Sqrt 16", "method": "SquareRoot", "arguments": [16], "expectedResult": 4 },
+    { "name": "Sqrt 2", "method": "SquareRoot", "arguments": [2], "expectedResult": 1.414 },
+    { "name": "Sqrt negative", "method": "SquareRoot", "arguments": [-1], "expectException": "ArgumentOutOfRangeException" },
+    { "name": "Add zero", "method": "Add", "arguments": [0, 0], "expectedResult": 0 },
+    { "name": "Subtract negative", "method": "Subtract", "arguments": [3, 10], "expectedResult": -7 }
+  ]
+}

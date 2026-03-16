@@ -1,0 +1,12 @@
+{
+  "name": "Basic",
+  "tests": [
+    { "name": "Add 5+3", "method": "Add", "arguments": [5, 3], "expectedResult": 8 },
+    { "name": "Add 1..4", "method": "Add", "arguments": [1, 2, 3, 4], "expectedResult": 10 },
+    { "name": "Subtract", "method": "Subtract", "arguments": [10, 4], "expectedResult": 6 },
+    { "name": "Multiply 6*7", "method": "Multiply", "arguments": [6, 7], "expectedResult": 42 },
+    { "name": "Multiply 2*3*4", "method": "Multiply", "arguments": [2, 3, 4], "expectedResult": 24 },
+    { "name": "Divide 15/3", "method": "Divide", "arguments": [15, 3], "expectedResult": 5 },
+    { "name": "Divide by zero", "method": "Divide", "arguments": [1, 0], "expectException": "DivideByZeroException" }
+  ]
+}
